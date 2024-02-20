@@ -22,6 +22,9 @@ To get started, you will need to install R and RStudio:
 - [COMP5120 Canvas (TBA)](https://vinuni.instructure.com/courses/1977)
 
 ## Weekly Application Exercises (AE)
+For each week, read through the notes before attempting the weekly AE.
+The corresponding example R Markdown notebook is also provided with different formats for readability.
+
 | Week | Topic | Notes | R Markdown |
 | --- | --- | --- | --- |
 | 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf)|
