@@ -61,9 +61,9 @@ Alternatively, you may wish to use VSCode for your R development. You can follow
 
 ## Running code in R Markdown
 
-R Markdown works with executable code chunks and markdown text sections. By default the plain text input in the file will be considered markdown input (so you can use markdown notations for formatting). To create an executable chunk in R Markdown, use the ````` symbols with the tag `{r}`   to signify a chunk should be considered a piece of runnable R code. Note that since R is a scripting language, you can run the code line-by-line or by chunk. Run the following chunk and check the output which should be displayed below the chunk in RStudio.
+R Markdown works with executable code chunks and markdown text sections. By default the plain text input in the file will be considered markdown input (so you can use markdown notations for formatting). To create an executable chunk in R Markdown, use the ``` symbols with the tag `{r}`   to signify a chunk should be considered a piece of runnable R code. Note that since R is a scripting language, you can run the code line-by-line or by chunk. Run the following chunk and check the output which should be displayed below the chunk in RStudio.
 
-```python
+````
 ```{r}
 # c() is for 'concatenate' or 'combine'
 # this is essentially 'combining' 4 single-element vectors
@@ -71,7 +71,7 @@ R Markdown works with executable code chunks and markdown text sections. By defa
 myVector <- c(1,2,3,4)
 mean(myVector)
 ```
-```
+````
 
 ![Untitled](img/Untitled%201.png)
 
