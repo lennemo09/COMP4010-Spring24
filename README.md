@@ -1,5 +1,7 @@
 # COMP4010/5120 - Data Visualization - Spring 2024
 
+![Banner](https://www.visualcinnamon.com/img/blog/2017/journey-into-dataviz/journey_into_dataviz_feature.jpg)
+
 # Data Visualization with R
 This course teaches techniques and algorithms for creating effective visualizations of large datasets and their analytics, based on principles from graphic design, visual art, perceptual psychology and cognitive science. In addition to participating in class discussions, students will have to complete several short data analysis and visualization design assignments as well as a final project. Data visualization tools such as Tableau or R are considered as lab exercises. Future developments and methods for continual learning are also presented.
 
@@ -18,7 +20,7 @@ To get started, you will need to install R and RStudio:
 ## Canvas
 
 - [COMP4010 Canvas](https://vinuni.instructure.com/courses/1977)
-- [COMP5120 Canvas](https://vinuni.instructure.com/courses/1977)
+- [COMP5120 Canvas (TBA)](https://vinuni.instructure.com/courses/1977)
 
 ## Weekly Application Exercises (AE)
 | Week | Topic | Notes | R Markdown |
