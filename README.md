@@ -20,6 +20,14 @@ To get started, you will need to install R and RStudio:
 - [COMP4010 Canvas](https://vinuni.instructure.com/courses/1977)
 - [COMP5120 Canvas](https://vinuni.instructure.com/courses/1977)
 
+## Weekly Application Exercises (AE)
+| Week | Topic | Notes | R Markdown |
+| --- | --- | --- | --- |
+| 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf)|
+| 02 | Coming soon... |  | |
+
+
+
 ## Contributing
 
 We encourage students to contribute to this repository by providing feedback, suggesting improvements, or adding new resources.
