@@ -26,6 +26,19 @@ To get started, you will need to install R and RStudio:
 | --- | --- | --- | --- |
 | 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf)|
 | 02 | Coming soon... |  | |
+| 03 | ... |  | |
+| 04 | ... |  | |
+| 05 | ... |  | |
+| 06 | ... |  | |
+| 07 | ... |  | |
+| 08 | ... |  | |
+| 09 | ... |  | |
+| 10 | ... |  | |
+| 11 | ... |  | |
+| 12 | ... |  | |
+| 13 | ... |  | |
+| 14 | ... |  | |
+| 15 | ... |  | |
 
 
 
