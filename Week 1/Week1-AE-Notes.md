@@ -39,11 +39,11 @@ Based on the Minard’s map that you’ve seen in the lecture (and in **Section 
 3. **Coordinate System**: What coordinate system is used and how does it contribute to the map’s effectiveness?
 4. **Faceting**: Is faceting used in the map? 
 
-## Task 2.
+## Task 2. Simple scatter plot with `mtcars`
 
-Select any two attributes from the `mtcars` dataset and use `ggplot2` to plot their relationship. Refer to **Section B.4** for additional information and an example of plotting **miles per gallon** vs. **weight**.
+Select any two attributes from the `mtcars` dataset and use `ggplot2` to plot their relationship using a scatter plot. Refer to **Section B.4** for additional information and an example of plotting **miles per gallon** vs. **weight**.
 
-## Task 3.
+## Task 3. Trying out other plots
 
 Select any built-in dataset included with R ([R datasets](http://www.sthda.com/english/wiki/r-built-in-data-sets)) and `ggplot2` ([documentation](https://ggplot2.tidyverse.org/reference/#data)), create 3 plots: a scatter plot, a bar chart, and a line graph with any attributes that you’d like. Refer to **Section B.5.** if you require additional help.
 
