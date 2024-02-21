@@ -1,16 +1,79 @@
-# COMP4010 - Week 1 Application Exercise
+![Banner](img/olympic_feathers_print.jpeg)
+# COMP4010/5120 - Week 1 Application Exercises
 
 You can find the Notion version of this booklet here (images may not load if you’re viewing on GitHub): 
 
-[COMP4010 - Week 1 Application Exercise](https://www.notion.so/COMP4010-Week-1-Application-Exercise-a78a2f694f8a48f185556b98bf074d2e?pvs=21)
+[**COMP4010/5120** - Week 1 Application Exercises](https://www.notion.so/COMP4010-5120-Week-1-Application-Exercises-a78a2f694f8a48f185556b98bf074d2e?pvs=21)
 
 *Cover image by the wonderful [Visual Cinnamon](https://www.visualcinnamon.com/portfolio/)*
 
 ---
 
-# Introduction to R
+<aside>
+⚠️ **This week’s application exercise (AE) is quite straightforward. We aim to introduce you to R and getting it set up on your local computer. Please submit your work by the appointed deadline on the corresponding Canvas assignment.**
+</aside>
 
-### Overview of R
+---
+
+# Submission requirements:
+
+- For each week, you will need to submit **TWO** items to Canvas: Your R Markdown file in `.Rmd` and `.pdf` formats. You can export `.Rmd` to `.pdf` by using the Knit functionality. If you’re not sure how to do that please check out this video: [Tutorial on how to Knit R Markdown](https://youtu.be/8eBBPVMwTLo?si=93Vo8OOApf0vAYYH).
+- In the R Markdown file please provide your answers to the provided exercises (both theory and programming questions).
+- Answers to theory questions should be included in markdown as plain text. Answers to programming questions should be included in executable R chunks (more information in **Reading Material Section A.2.4**).
+
+---
+
+# A. Application Exercises
+
+## Task 1. Grammar of Minard’s Map
+
+Based on the Minard’s map that you’ve seen in the lecture (and in **Section B.1**). Based on the elements of grammar of graphics, provide short answers to describe Minard’s map:
+
+1. **Layer**:
+    1. **Data**: What kind of data are represented (temperature, geographical, time, etc.)?
+    2. **Mapping**: How is data mapped to visual properties (color, size, annotations, etc.)?
+    3. **Statistical Transformation (Stat)**: Identify any statistical transformations used in the map.
+    4. **Geometric Object (Geom)**: What geometric objects are employed to represent data?
+    5. **Position Adjustment (Position)**: Describe how position is used to convey information.
+2. **Scale**: How are scales applied to represent different data types?
+3. **Coordinate System**: What coordinate system is used and how does it contribute to the map’s effectiveness?
+4. **Faceting**: Is faceting used in the map? 
+
+## Task 2.
+
+Select any two attributes from the `mtcars` dataset and use `ggplot2` to plot their relationship. Refer to **Section B.4** for additional information and an example of plotting **miles per gallon** vs. **weight**.
+
+## Task 3.
+
+Select any built-in dataset included with R ([R datasets](http://www.sthda.com/english/wiki/r-built-in-data-sets)) and `ggplot2` ([documentation](https://ggplot2.tidyverse.org/reference/#data)), create 3 plots: a scatter plot, a bar chart, and a line graph with any attributes that you’d like. Refer to **Section B.5.** if you require additional help.
+
+---
+
+# B. Reading Material
+
+## 1. Grammar of Graphics
+
+![minard-english.png](img/Minard_Update.png)
+
+Minard’s map (English translation). Full size image: [Wikipedia](https://commons.wikimedia.org/wiki/File:Minard_Update.png).
+
+Charles Joseph Minard's map depicting Napoleon's Russian campaign of 1812 is not just a remarkable piece of historical cartography but also a seminal work in the field of data visualization. Completed in 1869, this map is often hailed as one of the most powerful and insightful visualizations of data ever created.
+
+Minard, a French civil engineer, masterfully combined several data sets into a single two-dimensional image. His map portrays the size of Napoleon's army, the path of the campaign, the direction of travel, and the temperature at various stages of the retreat from Moscow. The width of the tan and black band illustrates the size of the army at each point along the route, dramatically shrinking as the troops faced harsh temperatures, combat losses, and other hardships.
+
+The impact and importance of Minard's map in the realm of data visualization are profound:
+
+1. **Multivariate Representation**: Minard's map was groundbreaking in its ability to represent multiple variables—geography, army size, direction, and temperature—simultaneously in a clear, coherent manner. This was a significant step forward in the art and science of data visualization.
+2. **Narrative Power**: The map tells a compelling story, not just presenting data but also conveying the disastrous scale of the campaign. It serves as an early and powerful example of how visual data can communicate complex stories, making them accessible and engaging to a wide audience.
+3. **Pioneering Information Design**: Minard's work is seen as a precursor to modern infographics and data journalism. It demonstrated how statistical data could be integrated with graphic design to produce a clear, succinct, and visually engaging representation of complex information.
+4. **Influence on Subsequent Work**: The map has been extensively studied and praised for its clarity and effectiveness, influencing generations of data scientists, statisticians, and designers. It stands as a benchmark for effective data visualization, often used in education to demonstrate best practices.
+5. **Evolving Relevance**: In an age where data is more abundant and complex than ever, Minard's map remains relevant. It is a testament to the enduring power of well-crafted visualizations to make sense of large, complex data sets.
+
+In summary, Minard's map goes beyond the mere tracing of Napoleon's army; it encapsulates a tragic episode in history through a masterful blend of art, science, and storytelling. Its legacy lies in its enduring influence on how we visualize and interpret data, making it a cornerstone in the field of data visualization.
+
+## 2. Introduction to R
+
+### 2.1. Overview of R
 
 R is a powerful language and environment for statistical computing and graphics. It is highly extensible and offers a wide variety of statistical and graphical techniques, including linear and nonlinear modeling, statistical tests, time series analysis, classification, clustering, and more. R is open source and freely available, making it a popular choice in academia, research, and industry for data analysis and visualization tasks.
 
@@ -20,7 +83,7 @@ To install R and RStudio, follow the instructions here:
 
 [https://rstudio-education.github.io/hopr/starting.html](https://rstudio-education.github.io/hopr/starting.html)
 
-### R and Python: Comparing and Contrasting
+### 2.2. R and Python: Comparing and Contrasting
 
 While Python is a general-purpose language with strong capabilities in data analysis and visualization, R is a specialized language for statistical analysis. Here are some key comparisons:
 
@@ -29,7 +92,7 @@ While Python is a general-purpose language with strong capabilities in data anal
 - **Syntax**: Python is known for its readability and ease of use. R, while having a steeper learning curve, offers advanced statistical functions out of the box.
 - **Community**: Python has a broader user base, while R's community is highly specialized in statistics and data analysis.
 
-### Navigating RStudio Interface
+### 2.3. Navigating RStudio Interface
 
 RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor, and tools for plotting, history, debugging, and workspace management. Key areas of the RStudio interface include:
 
@@ -44,13 +107,13 @@ There are many ways to store and execute R code, namely: R script (`.R`), R Mark
 
 ---
 
-## R in VSCode
+### R in VSCode
 
 Alternatively, you may wish to use VSCode for your R development. You can follow the instructions here to set it up on your local machine: 
 
 [](https://code.visualstudio.com/docs/languages/r)
 
-### Basic R Syntax and Operations
+### Examples of Basic R Syntax and Operations
 
 - **Variables**: Assign values with **`<-`** or **`=`**. E.g., **`x <- 10`** or **`x = 10`**.
 - **Data Types**: Includes vectors, lists, matrices, data frames, and factors.
@@ -59,7 +122,7 @@ Alternatively, you may wish to use VSCode for your R development. You can follow
 - **Basic Functions**: Use functions like **`mean()`**, **`sum()`**, **`length()`**.
 - **Packages**: Enhance R’s functionality. Install with **`install.packages("package_name")`** and load with **`library(package_name)`**.
 
-## Running code in R Markdown
+### 2.4. Running code in R Markdown
 
 R Markdown works with executable code chunks and markdown text sections. By default the plain text input in the file will be considered markdown input (so you can use markdown notations for formatting). To create an executable chunk in R Markdown, use the ``` symbols with the tag `{r}`   to signify a chunk should be considered a piece of runnable R code. Note that since R is a scripting language, you can run the code line-by-line or by chunk. Run the following chunk and check the output which should be displayed below the chunk in RStudio.
 
@@ -77,7 +140,7 @@ mean(myVector)
 
 ---
 
-# Introduction to CRAN and Package Management in R
+## 3. Introduction to CRAN and Package Management in R
 
 The Comprehensive R Archive Network (CRAN) is a repository of R packages. It's the primary resource for extending the capabilities of R. As of my last update, CRAN hosted over 15,000 packages, covering a wide range of functionalities, from data manipulation and statistical modeling to advanced graphics and machine learning.
 
@@ -126,7 +189,7 @@ Once ggplot2 is installed, it needs to be loaded into your R session to use it:
 
 Understanding CRAN and the package management system in R is crucial for extending the functionality of your R environment. With these skills, you are well-equipped to install and load any package, including `ggplot2`, which you will use extensively for data visualization tasks.
 
-### Introduction to the Grammar of Graphics and ggplot2 Syntax
+## 4. Introduction to the Grammar of Graphics and `ggplot2` Syntax
 
 `ggplot2`, created by Hadley Wickham, is based on the concept of the ***grammar of graphics***. This idea conceptualizes a plot as a coherent system, similar to a language. The grammar of graphics allows for the creation of complex and customizable plots from simple components.
 
@@ -199,9 +262,9 @@ You can change the color of points in a scatter plot, for example:
     ---
     
 
-# **Practice Examples for Data Visualization with `ggplot2`**
+## **5. Practice Examples for Data Visualization with `ggplot2`**
 
-### 1. Experimenting with the Iris Dataset
+### 5.1. Experimenting with the Iris Dataset
 
 - **Dataset**: Iris (available in R by default)
 - **Task**: Create a scatter plot showing the relationship between petal length and petal width, colored by species.
@@ -218,7 +281,7 @@ You can change the color of points in a scatter plot, for example:
     ![Untitled](img/Untitled%206.png)
     
 
-### 2. Visualizing the mtcars Dataset
+### 5.2. Visualizing the mtcars Dataset
 
 - **Dataset**: mtcars (available in R by default)
 - **Task**: Create a bar plot showing the average miles per gallon (mpg) for cars with different numbers of cylinders.
@@ -235,7 +298,7 @@ You can change the color of points in a scatter plot, for example:
     ![Untitled](img/Untitled%207.png)
     
 
-### 3. Exploring the gapminder Dataset
+### 5.3. Exploring the gapminder Dataset
 
 - **Dataset**: gapminder (install using **`install.packages("gapminder")`** and then **`library(gapminder)`**)
 - **Task**: Create a line plot showing GDP per capita over time for select countries.
@@ -253,7 +316,7 @@ You can change the color of points in a scatter plot, for example:
     ![Untitled](img/Untitled%208.png)
     
 
-### 4. Working with the diamonds Dataset
+### 5.4. Working with the diamonds Dataset
 
 - **Dataset**: diamonds (part of ggplot2 package)
 - **Task**: Create a histogram of diamond prices, faceted by cut quality.

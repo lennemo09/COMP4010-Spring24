@@ -5,7 +5,37 @@ output:
   pdf_document: default
 date: "2024-02-20"
 ---
+
 # Week 1
+
+# Application Exercises
+
+## Task 1.
+
+-   Data:
+-   Mapping:
+-   Statistical transformation:
+-   Geometric object:
+-   Position adjustment:
+-   Scale:
+-   Coordinate system:
+-   Faceting:
+
+## Task 2.
+
+```{r}
+# Your code here
+
+```
+
+## Task 3.
+
+```{r}
+# Your code here
+
+```
+
+# Reading Material
 
 ## Hello World! but in R
 
