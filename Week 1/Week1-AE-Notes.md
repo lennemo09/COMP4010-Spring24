@@ -50,7 +50,7 @@ Select any built-in dataset included with R ([R datasets](http://www.sthda.com/e
 ---
 
 # B. Reading Material
-
+All the code provided in this section are included in the sample R Markdown files on [GitHub](https://github.com/lennemo09/COMP4010-Spring24).
 ## 1. Grammar of Graphics
 
 ![minard-english.png](img/Minard_Update.png)
