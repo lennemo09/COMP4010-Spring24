@@ -41,7 +41,9 @@ The corresponding example R Markdown notebook is also provided with different fo
 | 14 | ... |  | |
 | 15 | ... |  | |
 
+## Helpful resources
 
+- [from Data to Viz](https://www.data-to-viz.com/)
 
 ## Contributing
 
