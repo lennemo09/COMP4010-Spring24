@@ -43,6 +43,7 @@ The corresponding example R Markdown notebook is also provided with different fo
 
 ## Helpful resources
 
+- [Hans Rosling's 200 Countries, 200 Years, 4 Minutes - The Joy of Stats - BBC Four](https://youtu.be/jbkSRLYSojo?si=yENI1BZSAPYKcjd7): One of the most popular talks about data visualization
 - [from Data to Viz](https://www.data-to-viz.com/)
 
 ## Hall of Shame - Learn from bad examples
