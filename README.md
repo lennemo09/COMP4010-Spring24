@@ -26,8 +26,8 @@ The corresponding example R Markdown notebook is also provided with different fo
 | Week | Topic | Notes | R Markdown |
 | --- | --- | --- | --- |
 | 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf)|
-| 02 | Coming soon... |  | |
-| 03 | ... |  | |
+| 02 | Practicing with Tabular Data and More Geoms  |  | |
+| 03 | Coming soon... |  | |
 | 04 | ... |  | |
 | 05 | ... |  | |
 | 06 | ... |  | |
