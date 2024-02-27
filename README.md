@@ -45,6 +45,13 @@ The corresponding example R Markdown notebook is also provided with different fo
 
 - [from Data to Viz](https://www.data-to-viz.com/)
 
+## Hall of Shame - Learn from bad examples
+
+- [Don't be counter intuitive](https://www.data-to-viz.com/caveat/counter_intuitive.html)
+- [5 examples of bad data visualization](https://www.jotform.com/blog/bad-data-visualization/)
+- [10 Good and Bad Examples of Data Visualization in 2024](https://www.polymersearch.com/blog/10-good-and-bad-examples-of-data-visualization)
+- [12 Bad Data Visualization Examples Explained](https://www.codeconquest.com/blog/12-bad-data-visualization-examples-explained/)
+
 ## Contributing
 
 We encourage students to contribute to this repository by providing feedback, suggesting improvements, or adding new resources.
