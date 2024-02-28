@@ -1,0 +1,185 @@
+---
+---
+---
+
+# Week 2
+
+# Application Exercises
+
+Include `tidyverse`:
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+theme_set(theme_minimal())
+```
+
+Read the data:
+
+```{r}
+df <- read_csv("homesales.csv")
+```
+
+Average home size by decade:
+
+```{r}
+# create decade variable
+df <- df |>
+  mutate(
+    decade_built = (year_built %/% 10) * 10,
+    decade_built_cat = case_when(
+      decade_built <= 1940 ~ "1940 or before",
+      decade_built >= 1990 ~ "1990 or after",
+      .default = as.character(decade_built)
+    )
+  )
+
+# calculate mean area by decade
+mean_area_decade <- df |>
+  group_by(decade_built_cat) |>
+  summarize(mean_area = mean(area))
+mean_area_decade
+```
+
+Visualizing the data as a bar chart:
+
+```{r}
+ggplot(
+  data = mean_area_decade,
+  mapping = aes(x = mean_area, y = decade_built_cat)
+) +
+  geom_col() +
+  labs(
+    x = "Mean area (square feet)", y = "Decade built",
+    title = "Mean area of houses, by decade built"
+  )
+```
+
+Visualizing the data as a dot plot:
+
+```{r}
+ggplot(
+  data = mean_area_decade,
+  mapping = aes(x = mean_area, y = decade_built_cat)
+) +
+  geom_point(size = 4) +
+  labs(
+    x = "Mean area (square feet)", y = "Decade built",
+    title = "Mean area of houses, by decade built"
+  )
+```
+
+## TASK 1. Visualizing the data as a lollipop chart
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+## TASK 2. Visualizing the distribution of the number of bedrooms
+
+Collapse the variable `beds` into a smaller number of categories and drop rows with missing values for this variable:
+
+```{r}
+df_bed <- df |>
+  mutate(beds = factor(beds) |>
+    fct_collapse(
+      "5+" = c("5", "6", "7", "9")
+    )) |>
+  drop_na(beds)
+```
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+## TASK 3. Visualizing the distribution of the number of bedrooms by the decade in which the property was built
+
+Stacked bar chart (number of bedrooms by the decade built):
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+Dodged bar chart (number of bedrooms by the decade built):
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+Relative frequency bar chart (number of bedrooms by the decade built):
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+## Task 4. Visualizing the distribution of property size by decades
+
+Getting mean of area of each decade category:
+
+```{r}
+mean_area_decade <- df |>
+  group_by(decade_built_cat) |>
+  summarize(mean_area = mean(area))
+```
+
+Bar chart (mean area by decade built):
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+Box plot (area by decade built):
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+Violin plot (area by decade built):
+
+```{r}
+# YOUR CODE HERE
+
+
+
+
+```
+
+Strip chart (area by decade built):
+
+```{r}
+set.seed(4010)
+
+# YOUR CODE HERE
+
+
+
+
+```
