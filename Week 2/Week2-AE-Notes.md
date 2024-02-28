@@ -53,12 +53,15 @@ Generate each form of the bar chart and compare the differences. Which one do yo
 Your plot should look something (may not need to be exactly) like this:
 
 **Stacked bar chart**
+
 ![Stacked bar chart](img/housedata5.png)
 
 **Dodged bar chart**
+
 ![Dodged bar chart](img/housedata6.png)
 
 **Relative frequency bar chart**
+
 ![Relative frequency bar chart](img/housedata7.png)
 
 ## Task 4. Visualizing the distribution of property size by decades
