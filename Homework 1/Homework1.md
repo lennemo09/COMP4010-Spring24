@@ -86,6 +86,7 @@ Create a boxplot to visualize the distribution of item prices (USD) for each des
 Add appropriate axis labels, and a plot title.
 
 An example plot (yours may look different):
+
 ![Box plot](img/task4.png)
 
 In your RMarkdown, answer the following question(s):
@@ -98,6 +99,7 @@ In the original dataset, count the number of items in each `category` and visual
 **Optional**: Sort the categories in descending order of item count.
 
 An example plot (yours may look different):
+
 ![Lollipop plot](img/task5.png)
 
 In your RMarkdown, answer the following question(s):
@@ -110,6 +112,7 @@ Calculate the average price (USD) for each category and visualize the distributi
 **Optional**: Sort the categories by average price in descending order.
 
 An example plot (yours may look different):
+
 ![Lollipop plot](img/task6.png)
 
 In your RMarkdown, answer the following question(s):
@@ -120,6 +123,7 @@ In your RMarkdown, answer the following question(s):
 A volume of each item is the product of its `height`, `width`, and `depth`. Plot a scattter plot of volume on the y-axis, and the price in USD on the x-axis. Color the plot using `category`.
 
 An example plot (yours may look different):
+
 ![Scatter plot](img/task7.png)
 
 In your RMarkdown, answer the following question(s):
