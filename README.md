@@ -25,8 +25,8 @@ The corresponding example R Markdown notebook is also provided with different fo
 
 | Week | Topic | Notes | R Markdown |
 | --- | --- | --- | --- |
-| 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf)|
-| 02 | Practicing with Tabular Data and More Geoms  |  | |
+| 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf) |
+| 02 | Practicing with Tabular Data and More Geoms  | [Notes](Week%202/Week2-AE-Notes.md) | [Rmd](Week%202/Week2-AE-RMarkdown.Rmd) \ [HTML](Week%202/Week2-AE-RMarkdown.html) \ [PDF](Week%202/Week2-AE-RMarkdown.pdf) |
 | 03 | Coming soon... |  | |
 | 04 | ... |  | |
 | 05 | ... |  | |
@@ -45,6 +45,10 @@ The corresponding example R Markdown notebook is also provided with different fo
 
 - [Hans Rosling's 200 Countries, 200 Years, 4 Minutes - The Joy of Stats - BBC Four](https://youtu.be/jbkSRLYSojo?si=yENI1BZSAPYKcjd7): One of the most popular talks about data visualization
 - [from Data to Viz](https://www.data-to-viz.com/)
+
+## Hall of Fame - Learn from good examples
+- [Beautiful tutorial on plotting Australian heatwave data with R](https://github.com/njtierney/ozviridis)
+- [Ab interactive visualization showing how the names of makeup products reveal bias in beauty](https://pudding.cool/2021/03/foundation-names/)
 
 ## Hall of Shame - Learn from bad examples
 
