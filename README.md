@@ -19,7 +19,7 @@ To get started, you will need to install R and RStudio:
 - [COMP4010 Canvas](https://vinuni.instructure.com/courses/1977)
 - [COMP5120 Canvas (TBA)](https://vinuni.instructure.com/courses/1977)
 
-## Bi-weekly Homework
+## Homework Problem Sets
 | Weeks | Problem Set | Dataset | Deadline |
 | --- | --- | --- | --- |
 | Week 1-2 | [Problem Set](Homework%201/Homework1.md) | [Dataset](Homework%201/ikea_data.csv) | 11.59pm Monday Week 4 (March 11) |
