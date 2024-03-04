@@ -10,7 +10,7 @@ Feel free to experiment, explore different approaches, and consult online resour
 
 Dataset: The dataset, [`ikea_data.csv`](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-11-03/), contains information about various IKEA furniture items, including their names, categories, prices, dimensions, and designers.
 
-### Data Dictionary
+### Data dictionary
 
 |variable          |class     |description |
 |:-----------------|:---------|:-----------|
@@ -27,6 +27,10 @@ Dataset: The dataset, [`ikea_data.csv`](https://github.com/rfordatascience/tidyt
 |depth             |double    | Depth of the item in Centimeter |
 |height            |double    | Height of the item in Centimeter |
 |width             |double    | Width of the item in Centimeter|
+
+# Submission requirements
+Similar to the weekly AEs, you should submit your work in 2 formats: `Rmd` and `pdf` to Canvas.
+Answers for non-coding questions should be added in the file as plain text.
 
 
 ## Task 1: Converting prices to USD
