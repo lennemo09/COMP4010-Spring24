@@ -35,7 +35,7 @@ Answers for non-coding questions should be added in the file as plain text.
 
 ## Task 1: Converting prices to USD
 
-Convert the price column from Saudi Riyals (SAR) to USD, considering an exchange rate of 1 SAR = 0.27 USD. Create a new column, `price_usd``, containing the prices in USD.
+Convert the price column from Saudi Riyals (SAR) to USD, considering an exchange rate of 1 SAR = 0.27 USD. Create a new column, `price_usd`, containing the prices in USD.
 
 # Task 2: Splitting multiple designers into seperate rows
 
@@ -70,12 +70,12 @@ Based on `df_split` in Task 2, find the top 20 designers with the most products 
 | ... | ... |
 
 Hint: You may find the following functions useful: 
-- `filter()`
-- `is.na()`
-- `group_by()`
-- `summarize()`
-- `n()`
-- `top_n()`
+- [`filter()`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/filter)
+- [`is.na()`](https://www.statology.org/is-na/)
+- [`group_by()`](https://datacarpentry.org/R-genomics/04-dplyr.html#split-apply-combine_data_analysis_and_the_summarize()_function)
+- [`summarize()`](https://datacarpentry.org/R-genomics/04-dplyr.html#split-apply-combine_data_analysis_and_the_summarize()_function)
+- [`n()`](https://www.statology.org/n-function-in-r/)
+- [`top_n()`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/top_n)
 
 In your RMarkdown, answer the following question(s):
 - Who are the top 3 designers by number of items?
