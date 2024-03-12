@@ -30,7 +30,8 @@ Use [`scale_fill_viridis_d(option='scale_name')`](https://sjspielman.git-hub.io/
 
 ![Task 5](img/task5.jpg)
 
-## Task 6. 
+## Task 6. Using icons
+Install the `emojifont` package with `install.packages("emojifont")` and import it. Use [`fontawesome`](https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html#font-awesome) to get an icon/emoji and apply it to the waffle chart similar to the last example from [`ggwaffle doc`](https://liamgilbey.github.io/ggwaffle/).
 
 
 ![Task 6](img/task6.jpg)
