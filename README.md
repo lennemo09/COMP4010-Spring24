@@ -34,9 +34,9 @@ The corresponding example R Markdown notebook is also provided with different fo
 | --- | --- | --- | --- |
 | 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf) |
 | 02 | Practicing with Tabular Data and More Geoms  | [Notes](Week%202/Week2-AE-Notes.md) | [Rmd](Week%202/Week2-AE-RMarkdown.Rmd) \ [HTML](Week%202/Week2-AE-RMarkdown.html) \ [PDF](Week%202/Week2-AE-RMarkdown.pdf) |
-| 03 | Coming soon... |  | |
-| 04 | ... |  | |
-| 05 | ... |  | |
+| 03 | n/a | n/a | n/a |
+| 04 | Log scale & Waffle charts |  [Notes](Week%204/Week4-AE-Notes.md) | n/a |
+| 05 | Coming soon... |  | |
 | 06 | ... |  | |
 | 07 | ... |  | |
 | 08 | ... |  | |
