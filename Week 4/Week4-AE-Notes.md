@@ -28,6 +28,8 @@ Adjust the waffle chart to use a fixed aspect ratio so the symbols are squares.
 ## Task 5. Coloring the plot
 Use [`scale_fill_viridis_d(option='scale_name')`](https://sjspielman.git-hub.io/introverse/articles/color_fill_scales.html) to color your plot. Be sure to have `tidyverse` loaded.
 
+EDIT: [New link](https://sjspielman.github.io/introverse/articles/color_fill_scales.html)
+
 ![Task 5](img/task5.jpg)
 
 ## Task 6. Using icons
