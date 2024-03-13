@@ -134,7 +134,7 @@ ggplot(waffle_data, aes(x, y, fill = group)) +
   geom_waffle()
 ```
 
-![Waffle chart 2](img/waffle2.jpg)
+![Waffle chart 2](img/waffle2.png)
 
 In short, you first need to prepare the data with `waffle_iron()` and then plotting it with `ggplot2` and `geom_waffle()`. See the [documentation for [`waffle_iron()`](https://rdrr.io/github/liamgilbey/ggwaffle/man/waffle_iron.html) for more details.
 
