@@ -9,11 +9,11 @@ library(tidyverse)
 library(scales)
 
 # Load the data from the CSV file
-data <- read_csv("updated_realistic_chs_college_enrollment_data.csv")
+data <- read_csv("college_data_normalized.csv")
 
 # Filter the data for years 2100 onwards
 filtered_data <- data %>% 
-  filter(year >= 2121)
+  filter(year >= 2116)
 
 # Create a dodged bar chart
 college_plot <- ggplot(filtered_data, aes(x = college, y = pct, fill = as.factor(year))) +
@@ -43,7 +43,7 @@ main_font = "Montserrat"
 
 # vinuni color palette - accent colors
 # based on branding guideline (page 13) - https://policy.vinuni.edu.vn/all-policies/brand-identity-manual/
-vinuni_palette_main <- c("#35426e", "#d2ae6d", "#c83538")
+vinuni_palette_main <- c("#35426e", "#d2ae6d", "#c83538", "#2e548a")
 vinuni_palette_accents <- c( "#5cc6d0", "#a7c4d2", "#d2d3d5",  "#4890bd", "#0087c3", "#d2ae6d")
 
 college_plot +
@@ -54,7 +54,7 @@ college_plot +
   ) +
   theme(
     plot.title.position = "plot",
-    plot.title = element_text(hjust = 0.5, face="bold", colour = vinuni_pallete_main[3]),
+    plot.title = element_text(hjust = 0.5, face="bold", colour = vinuni_palette_main[3]),
     plot.subtitle = element_text(hjust = 0.5, face="bold"),
     legend.position = "bottom",
     panel.grid.major.x = element_blank(),
@@ -62,8 +62,8 @@ college_plot +
     panel.grid.major.y = element_line(color = "grey", linewidth = 0.2),
     panel.grid.minor.y = element_blank(),
     axis.text = element_text(size = rel(1.0)),
-    axis.text.x = element_text(face="bold", colour = vinuni_pallete_main[1]), 
-    axis.text.y = element_text(face="bold", colour = vinuni_pallete_main[1]), 
+    axis.text.x = element_text(face="bold", colour = vinuni_palette_main[1]), 
+    axis.text.y = element_text(face="bold", colour = vinuni_palette_main[1]), 
     legend.text = element_text(size = rel(0.9))
   )
 showtext_auto() 
@@ -88,7 +88,7 @@ theme_vinuni <- function(
   ) +
   theme(
     plot.title.position = "plot",
-    plot.title = element_text(hjust = 0.5, face="bold", colour = vinuni_pallete_main[3]),
+    plot.title = element_text(hjust = 0.5, face="bold", colour = vinuni_palette_main[3]),
     plot.subtitle = element_text(hjust = 0.5, face="bold"),
     legend.position = "bottom",
     panel.grid.major.x = element_blank(),
@@ -96,8 +96,8 @@ theme_vinuni <- function(
     panel.grid.major.y = element_line(color = "grey", linewidth = 0.2),
     panel.grid.minor.y = element_blank(),
     axis.text = element_text(size = rel(1.0)),
-    axis.text.x = element_text(face="bold", colour = vinuni_pallete_main[1]), 
-    axis.text.y = element_text(face="bold", colour = vinuni_pallete_main[1]), 
+    axis.text.x = element_text(face="bold", colour = vinuni_palette_main[1]), 
+    axis.text.y = element_text(face="bold", colour = vinuni_palette_main[1]), 
     legend.text = element_text(size = rel(0.9))
   )
 }
@@ -110,27 +110,14 @@ college_plot +
 ```
 
 ```{r}
-
-# Filter to get the top 3 colleges in 2125
-top_colleges_2125 <- data %>%
-  filter(year == 2125) %>%
-  arrange(desc(pct)) %>%
-  slice(1:3) %>%
-  pull(college)
-
-# Filter the original dataset to include only these colleges
-filtered_data <- data %>%
-  filter(college %in% top_colleges_2125)
-
-filtered_data |>
+data |>
   mutate(
     college = fct_reorder2(.f = college, .x = year, .y = pct)
   ) |>
   ggplot(aes(x = year, y = pct, color = college)) +
   geom_point() +
   geom_line() +
-  scale_x_continuous(limits = c(2100, 2125), breaks = seq(2100, 2125, 5)) +
-  scale_color_manual(values = vinuni_palette_main) +
+  scale_x_continuous(limits = c(2100, 2120), breaks = seq(2100, 2120, 5)) +
   scale_y_continuous(labels = label_percent()) +
   labs(
     x = "Year",
@@ -138,10 +125,10 @@ filtered_data |>
     color = "College",
     title = "Percentage of Enrolled Students by College",
   ) +
-  # use the Cornell theme
   theme_vinuni() +
   # legend does work better on the right for this chart
   theme(
     legend.position = "right"
-  )
+  ) +
+  scale_color_manual(values = vinuni_palette_main) 
 ```
