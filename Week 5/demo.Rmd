@@ -66,20 +66,18 @@ college_plot +
     axis.text.y = element_text(face="bold", colour = vinuni_palette_main[1]), 
     legend.text = element_text(size = rel(0.9))
   )
+
 showtext_auto() 
 ```
 
 
 ```{r}
 
-# define theme as its own function
-theme_vinuni <- function(
-    base_size = 11,
-    base_family = main_font,
-    base_line_size = base_size / 22,
-    base_rect_size = base_size / 22
-    ) {
-  # start with minimal theme
+# Saving our theme as a function
+theme_vinuni <- function(base_size = 11, base_family = main_font, 
+                         base_line_size = base_size / 22, 
+                         base_rect_size = base_size / 22) {
+  # Base our theme on minimal theme
   theme_minimal(
     base_family = base_family,
     base_size = base_size,
@@ -93,7 +91,7 @@ theme_vinuni <- function(
     legend.position = "bottom",
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
-    panel.grid.major.y = element_line(color = "grey", linewidth = 0.2),
+    panel.grid.major.y = element_line(color = "#999", linewidth = 0.2),
     panel.grid.minor.y = element_blank(),
     axis.text = element_text(size = rel(1.0)),
     axis.text.x = element_text(face="bold", colour = vinuni_palette_main[1]), 
