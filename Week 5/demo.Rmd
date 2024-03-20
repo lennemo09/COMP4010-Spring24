@@ -46,6 +46,12 @@ main_font = "Montserrat"
 vinuni_palette_main <- c("#35426e", "#d2ae6d", "#c83538", "#2e548a")
 vinuni_palette_accents <- c( "#5cc6d0", "#a7c4d2", "#d2d3d5",  "#4890bd", "#0087c3", "#d2ae6d")
 
+#maybe try google palette: https://partnermarketinghub.withgoogle.com/brands/google-assistant/overview/color-palette-and-typography/
+google_palette_main <- c("#EA4335", "#4285F4", "#FBBC04", "#34A853")
+
+#or MIT color palette: https://brand.mit.edu/color
+mit_palette_main <- c("#750014", "#8b959e", "#ff1423", "#000000")
+
 college_plot +
   scale_fill_manual(values = vinuni_palette_accents) +
   theme_minimal(
@@ -91,7 +97,7 @@ theme_vinuni <- function(base_size = 11, base_family = main_font,
     legend.position = "bottom",
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
-    panel.grid.major.y = element_line(color = "#999", linewidth = 0.2),
+    panel.grid.major.y = element_line(color = "#bbbbbb", linewidth = 0.2),
     panel.grid.minor.y = element_blank(),
     axis.text = element_text(size = rel(1.0)),
     axis.text.x = element_text(face="bold", colour = vinuni_palette_main[1]), 
@@ -124,9 +130,6 @@ data |>
     title = "Percentage of Enrolled Students by College",
   ) +
   theme_vinuni() +
-  # legend does work better on the right for this chart
-  theme(
-    legend.position = "right"
-  ) +
+  theme(legend.position = "right") +
   scale_color_manual(values = vinuni_palette_main) 
 ```
