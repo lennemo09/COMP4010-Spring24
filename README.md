@@ -17,7 +17,7 @@ To get started, you will need to install R and RStudio:
 ## Canvas
 
 - [COMP4010 Canvas](https://vinuni.instructure.com/courses/1977)
-- [COMP5120 Canvas)](https://vinuni.instructure.com/courses/1995)
+- [COMP5120 Canvas](https://vinuni.instructure.com/courses/1995)
 
 ## Homework Problem Sets
 | Weeks | Problem Set | Dataset | Deadline |
