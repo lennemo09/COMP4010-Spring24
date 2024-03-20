@@ -17,13 +17,14 @@ To get started, you will need to install R and RStudio:
 ## Canvas
 
 - [COMP4010 Canvas](https://vinuni.instructure.com/courses/1977)
-- [COMP5120 Canvas (TBA)](https://vinuni.instructure.com/courses/1977)
+- [COMP5120 Canvas)](https://vinuni.instructure.com/courses/1995)
 
 ## Homework Problem Sets
 | Weeks | Problem Set | Dataset | Deadline |
 | --- | --- | --- | --- |
 | Week 1-2 | [Problem Set](Homework%201/Homework1.md) | [Dataset](Homework%201/ikea_data.csv) | 11.59pm Monday Week 4 (March 11) |
-| Week 3-4 | Coming soon... | | |
+| Week 3-4-5 | Coming in 2 days! | | |
+| Week 6-7-8 | Coming soon... | | |
 
 ## Weekly Application Exercises (AE)
 
@@ -36,8 +37,8 @@ The corresponding example R Markdown notebook is also provided with different fo
 | 02 | Practicing with Tabular Data and More Geoms  | [Notes](Week%202/Week2-AE-Notes.md) | [Rmd](Week%202/Week2-AE-RMarkdown.Rmd) \ [HTML](Week%202/Week2-AE-RMarkdown.html) \ [PDF](Week%202/Week2-AE-RMarkdown.pdf) |
 | 03 | n/a | n/a | n/a |
 | 04 | Log scale & Waffle charts |  [Notes](Week%204/Week4-AE-Notes.md) | n/a |
-| 05 | Coming soon... |  | |
-| 06 | ... |  | |
+| 05 | Customizing theme | [Notes](Week%205/Week5-AE-Notes.md) | n/a |
+| 06 | Coming soon... |  | |
 | 07 | ... |  | |
 | 08 | ... |  | |
 | 09 | ... |  | |
