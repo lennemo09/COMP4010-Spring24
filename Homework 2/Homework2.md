@@ -34,6 +34,8 @@ You should do this by creating a function called `theme_college_stats()` to stor
 Additionally, the font family used in the above plot is [Open Sans from Google Font](https://fonts.google.com/specimen/Open+Sans).
 The color palette used for color coding the colleges is: `#78d6ff` for CAS, `#ffee54` for CBM, `#992212` for CECS, and `#117024` for CHS.
 
+Finally, please provide a short comment about what information you are able to intepret from this ridgeline plot.
+
 ## Task 2: Creating a bar chart for 2118 VinUni data
 
 ### Summary of task requirements
