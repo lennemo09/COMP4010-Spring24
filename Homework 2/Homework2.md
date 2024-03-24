@@ -83,6 +83,8 @@ Please try to recreate the plot to the best of your ability. You can pick any co
 
 To avoid copy and pasting a lot of code, you can create a function called `create_population_pyramid(file_name)` to generate a population pyramid with the defined style and theme for a given data file.
 
+Please describe what information does a population pyramid of a year tell you? Based on the 11 plots you've just generated, describe your idea of what is going on with the population in Vietnam? **Optional**: Provide your hypothesis/explanation to why that is happening.
+
 ## Task 5: Creating line graph for Vietnamese total population count from 1975 to 2025
 
 ### Summary of task requirements
