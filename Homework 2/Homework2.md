@@ -69,7 +69,7 @@ Hint: If you're unsure how to create this pie chart, check out [`coord_polar()` 
 ### Summary of task requirements
 
 - Create a series of 11 individual population pyramid plots for Vietnam from 1975 to 2025.
-- Create a theme to style the plots as close as possible to the example plot provided below.
+- Create a theme to style the plots as close as possible to the example plot provided below (you can use other color schemes).
 - Provide a comment describing what information does a population pyramid of a year tell you? 
 - Provide a comment, based on the 11 plots, describing your idea of what is going on with the population in Vietnam? Optional: Provide your hypothesis/explanation to why that is happening.
 
