@@ -38,8 +38,8 @@ The corresponding example R Markdown notebook is also provided with different fo
 | 03 | n/a | n/a | n/a |
 | 04 | Log scale & Waffle charts |  [Notes](Week%204/Week4-AE-Notes.md) | n/a |
 | 05 | Customizing theme | [Notes](Week%205/Week5-AE-Notes.md) | n/a |
-| 06 | Coming soon... |  | |
-| 07 | ... |  | |
+| 06 | Data wrangling! | [Notes](Week%206/Week6-AE-Notes.md) | [Rmd](Week%206/Week6-AE-RMarkdown.Rmd) |
+| 07 | Coming soon... |  | |
 | 08 | ... |  | |
 | 09 | ... |  | |
 | 10 | ... |  | |
