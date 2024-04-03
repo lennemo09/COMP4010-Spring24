@@ -39,8 +39,8 @@ The corresponding example R Markdown notebook is also provided with different fo
 | 04 | Log scale & Waffle charts |  [Notes](Week%204/Week4-AE-Notes.md) | n/a |
 | 05 | Customizing theme | [Notes](Week%205/Week5-AE-Notes.md) | n/a |
 | 06 | Data wrangling! | [Notes](Week%206/Week6-AE-Notes.md) | [Rmd](Week%206/Week6-AE-RMarkdown.Rmd) |
-| 07 | Coming soon... |  | |
-| 08 | ... |  | |
+| 07 | Annotations | [Notes](Week%207/Week7-AE-Notes.md) | [Rmd](Week%207/Week7-AE-RMarkdown.Rmd) |
+| 08 | Coming soon... |  | |
 | 09 | ... |  | |
 | 10 | ... |  | |
 | 11 | ... |  | |
@@ -55,8 +55,10 @@ The corresponding example R Markdown notebook is also provided with different fo
 - [from Data to Viz](https://www.data-to-viz.com/)
 
 ## Hall of Fame - Learn from good examples
+
 - [Beautiful tutorial on plotting Australian heatwave data with R](https://github.com/njtierney/ozviridis)
 - [Ab interactive visualization showing how the names of makeup products reveal bias in beauty](https://pudding.cool/2021/03/foundation-names/)
+- [adumb - I Made a Graph of Wikipedia... This Is What I Found](https://www.youtube.com/watch?v=JheGL6uSF-4&ab_channel=adumb)
 
 ## Hall of Shame - Learn from bad examples
 
