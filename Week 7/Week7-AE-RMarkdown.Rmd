@@ -1,0 +1,118 @@
+---
+title: "Week7-AE-RMarkdown"
+output: html_document
+date: "2024-03-27"
+---
+
+```{r}
+library(tidyverse)
+library(scales)
+
+
+#install.packages('WDI')
+library(WDI)    
+#install.packages('ggrepel')
+library(ggrepel)
+#install.packages('ggtext')
+library(ggtext) 
+```
+```{r}
+# CO2 emissions data is mostly NULL from 2021 onwards...
+wdi_co2_raw <- WDI(country = "all", indicators, extra = TRUE, 
+                   start = 1995, end = 2023)
+```
+
+```{r}
+wdi_clean <- wdi_co2_raw |>
+  filter(region != "Aggregates") |>
+  select(iso2c, iso3c, country, year,
+    population = SP.POP.TOTL,
+    co2_emissions = EN.ATM.CO2E.PC,
+    gdp_per_cap = NY.GDP.PCAP.KD,
+    region, income
+  ) |>
+  filter(population > 200000) 
+```
+
+```{r}
+co2_rankings <- wdi_clean |>
+  # Get rid of all the rows that have missing values in co2_emissions
+  drop_na(co2_emissions) |>
+  # Look at each year individually and rank countries based on their emissions that year
+  mutate(
+    ranking = rank(co2_emissions),
+    .by = year
+  )
+```
+
+
+# Task 1: Prepare data in wide format
+```{r}
+# YOUR CODE HERE
+
+
+
+```
+
+
+# Task 2: Data wrangling
+```{r}
+# YOUR CODE HERE
+
+
+
+```
+
+
+# Task 3: Scatter plot for changes in CO2 emission rankings between 1995 and 2020
+```{r}
+# YOUR CODE HERE
+
+
+
+```
+
+
+# Task 4: Lazy way to show change in rank
+```{r}
+# YOUR CODE HERE
+
+
+
+```
+
+
+# Task 5: Highlight significant countries
+```{r}
+# YOUR CODE HERE
+
+
+
+```
+
+
+# Task 6: Additional text annotations
+```{r}
+# YOUR CODE HERE
+
+
+
+```
+
+
+# Task 7: Using colors to redirect attention
+```{R}
+# YOUR CODE HERE
+
+
+
+```
+
+
+# Task 8: More geometric annotations
+```{r}
+# YOUR CODE HERE
+
+
+
+```
