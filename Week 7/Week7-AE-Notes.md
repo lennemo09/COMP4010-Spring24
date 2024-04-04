@@ -68,7 +68,7 @@ Create a basic plot that visualizes the changes in CO2 emission rankings between
 # Task 4. Lazy way to show change in rank
 
 Can you come up with the simplest visual element we can use to demonstrate whether a country increased, decreased, or maintained their ranking? You shouldn't need to change the data in any way.
-Add it to your current plot. (You may need to read the [`ggplot2 annotate()`](https://ggplot2.tidyverse.org/reference/annotate.html) documentation).
+Add it to your current plot. (You may need to read the [`ggplot2 annotate()`](https://rfortherestofus.com/2023/10/annotate-vs-geoms) examples).
 
 # Task 5. Highlight significant countries
 
