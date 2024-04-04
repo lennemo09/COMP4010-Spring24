@@ -54,14 +54,14 @@ Convert the data frame into wide format to better see the ranking by year.
 
 In this task you will need to prepare the data for further visualization tasks.
 
-- Calculate the difference in rankings and store in a column called `rank_diff`. 
+- Calculate the difference in rankings between any 2 years (e.g. 2020 and 1995) and store in a column called `rank_diff`. 
 - Create a column called `significant_diff` to indicate whether the rank changed by more than 30 positions, and whether it was a significant increase or significant decrease in ranking.
 
 ![Task 2](img/task2.jpg)
 
-## Task 3. Scatter plot for changes in CO2 emission rankings between 1995 and 2020
+## Task 3. Scatter plot for changes in CO2 emission rankings between 1995 and 2020 (or the years you've chosen)
 
-Create a basic plot that visualizes the changes in CO2 emission rankings between 1995 and 2020.
+Create a basic plot that visualizes the changes in CO2 emission rankings between 1995 and 2020 (or the years you've chosen).
 
 ![Task 3](img/task3.png)
 
