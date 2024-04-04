@@ -74,17 +74,25 @@ Add it to your current plot. (You may need to read the [`ggplot2 annotate()`](ht
 
 Add colors to better separate the three groups of countries based on the change in ranking. Use [`geom_label_repel()`](https://r-graph-gallery.com/package/ggrepel.html) from the `ggrepel` library to add the names of the countries which had a significant change in their rank.
 
+![Task 5](img/task5.png)
+
 # Task 6. Additional text annotations
 
 Since our plot is showing the relationship between the ranking of two different years, it essentially divides the plot into two halves. Add text annotations to provide labels for the two halves of the plot, `"Countries improving"` and `"Countries worsening"`.
+
+![Task 6](img/task6.png)
 
 # Task 7. Using colors to redirect attention
 
 Before we added colors to highlight the different classes of countries based on their change in ranking. Now use `scale_color_manual()` to change the color of the insignificant countries to be more *uninteresting*.
 
+![Task 7](img/task7.png)
+
 # Task 8. More geometric annotations
 
 With `annotate()`, use `segment` (with `arrow` parameter) and `rect` to create boxes, arrows, and text labels to highlight region containing the top 25 and bottom 25 ranking countries labelled `"Lowest emitters"` and `"Highest emitters"`.
+
+![Task 8](img/task8.png)
 
 # B. Reading Material
 
