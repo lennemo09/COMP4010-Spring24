@@ -17,6 +17,10 @@ library(ggrepel)
 library(ggtext) 
 ```
 ```{r}
+indicators <- c("SP.POP.TOTL",     # Population
+                "EN.ATM.CO2E.PC",  # CO2 emissions
+                "NY.GDP.PCAP.KD")  # GDP per capita
+
 # CO2 emissions data is mostly NULL from 2021 onwards...
 wdi_co2_raw <- WDI(country = "all", indicators, extra = TRUE, 
                    start = 1995, end = 2023)
