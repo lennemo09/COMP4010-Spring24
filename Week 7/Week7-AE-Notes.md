@@ -7,7 +7,7 @@
 
 **Important documentation:** [`ggplot2 annotate()`](https://ggplot2.tidyverse.org/reference/annotate.html)
 
-**Data:** `wdi_co2_raw <- WDI(country = "all", indicators, extra = TRUE, start = 1995, end = 2023)` from the `WDI` library by World Bank.
+**Data:** `wdi_co2_raw <- WDI(country = "all", c("SP.POP.TOTL","EN.ATM.CO2E.PC","NY.GDP.PCAP.KD"), extra = TRUE, start = 1995, end = 2023)` from the `WDI` library by World Bank.
 
 Although this dataset contains up to 2023, the CO2 emissions data is mostly `NA` from 2021 onwards, so we will be using only rows up until 2020. Also, to reduce clutter, let's only consider countries with a population greater than 200,000.
 
