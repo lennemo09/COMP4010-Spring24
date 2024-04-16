@@ -5,6 +5,8 @@
 
 # A. Application Exercises
 
+**Data:** [`nurses.csv`](./nurses.csv)
+
 ```R
 nurses <- read_csv("nurses.csv") |> clean_names()
 
