@@ -23,8 +23,8 @@ To get started, you will need to install R and RStudio:
 | Weeks | Problem Set | Dataset | Deadline |
 | --- | --- | --- | --- |
 | Week 1-2 | [Problem Set](Homework%201/Homework1.md) | [Dataset](Homework%201/ikea_data.csv) | 11.59pm Monday Week 4 (March 11) |
-| Week 3-4-5 | [Problem Set](Homework%202/Homework2.md) | [Dataset](Homework%202/) | 11.59pm Monday Week 7 (April 1) |
-| Week 6-7-8 | Coming soon... | | |
+| Week 4-5 | [Problem Set](Homework%202/Homework2.md) | [Dataset](Homework%202/) | 11.59pm Monday Week 7 (April 1) |
+| Week 6-7-9 | Coming soon... | | |
 
 ## Weekly Application Exercises (AE)
 
@@ -35,14 +35,14 @@ The corresponding example R Markdown notebook is also provided with different fo
 | --- | --- | --- | --- |
 | 01 | Introduction to R and `ggplot2` | [Notes](Week%201/Week1-AE-Notes.md) | [Rmd](Week%201/Week1-AE-RMarkdown.Rmd) \ [HTML](Week%201/Week1-AE-RMarkdown.html) \ [PDF](Week%201/Week1-AE-RMarkdown.pdf) |
 | 02 | Practicing with Tabular Data and More Geoms  | [Notes](Week%202/Week2-AE-Notes.md) | [Rmd](Week%202/Week2-AE-RMarkdown.Rmd) \ [HTML](Week%202/Week2-AE-RMarkdown.html) \ [PDF](Week%202/Week2-AE-RMarkdown.pdf) |
-| 03 | n/a | n/a | n/a |
+| 03 | Guest lecture! | n/a | n/a |
 | 04 | Log scale & Waffle charts |  [Notes](Week%204/Week4-AE-Notes.md) | n/a |
 | 05 | Customizing theme | [Notes](Week%205/Week5-AE-Notes.md) | n/a |
 | 06 | Data wrangling! | [Notes](Week%206/Week6-AE-Notes.md) | [Rmd](Week%206/Week6-AE-RMarkdown.Rmd) |
 | 07 | Annotations | [Notes](Week%207/Week7-AE-Notes.md) | [Rmd](Week%207/Week7-AE-RMarkdown.Rmd) |
-| 08 | Coming soon... |  | |
-| 09 | ... |  | |
-| 10 | ... |  | |
+| 08 | Presentation week! | n/a | n/a |
+| 09 | Accessibility |  | |
+| 10 | Coming soon... |  | |
 | 11 | ... |  | |
 | 12 | ... |  | |
 | 13 | ... |  | |
