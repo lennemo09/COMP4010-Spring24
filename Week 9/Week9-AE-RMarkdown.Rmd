@@ -18,24 +18,6 @@ nurses <- read_csv("nurses.csv") |> clean_names()
 # subset to three states
 nurses_subset <- nurses |>
   filter(state %in% c("California", "New York", "North Carolina"))
-
-# unemployment data
-unemp_state <- read_excel(
-  path = "emp-unemployment.xls",
-  sheet = "States",
-  skip = 5
-) |>
-  pivot_longer(
-    cols = -c(Fips, Area),
-    names_to = "Year",
-    values_to = "unemp"
-  ) |>
-  rename(state = Area, year = Year) |>
-  mutate(year = parse_number(year)) |>
-  filter(state != "United States") |>
-  # calculate mean unemp rate per state and year
-  group_by(state, year) |>
-  summarize(unemp_rate = mean(unemp, na.rm = TRUE))
 ```
 
 The following code chunk demonstrates how to add alternative text to a bar chart. The alternative text is added to the chunk header using the `fig-alt` chunk option. The text is written in Markdown and can be as long as needed. Note that fig-cap is not the same as `fig-alt`.
@@ -77,13 +59,7 @@ nurses_subset |>
 
 nurses_subset |>
   ggplot(aes(x = year, y = annual_salary_median, color = state)) +
-  geom_line(show.legend = FALSE) +
-  geom_text(
-    data = nurses_subset |> filter(year == max(year)),
-    aes(label = state), hjust = 0, nudge_x = 1,
-    show.legend = FALSE
-  ) +
-  scale_color_viridis_d(option = "C", end = 0.5) +
+  geom_line() +
   scale_y_continuous(labels = label_dollar(scale = 1/1000, suffix = "K")) +
   labs(
     x = "Year", y = "Annual median salary", color = "State",
@@ -95,24 +71,15 @@ nurses_subset |>
     )
 ```
 
-# Task 2. Add alt text to scatter plot
-```{r}
-# Your label here
-# Your caption here
-# Your alt text here
+# Task 2. Direct labelling instead of legends
 
-nurses |>
-  left_join(unemp_state) |>
-  drop_na(unemp_rate) |>
-  ggplot(aes(x = unemp_rate, y = hourly_wage_median)) +
-  geom_point(size = 2, alpha = .5) +
-  scale_x_continuous(labels = label_percent(scale = 1)) +
-  scale_y_continuous(labels = label_dollar()) +
-  labs(
-    x = "Unemployment rate", y = "Median hourly wage",
-    title = "Median hourly wage of Registered Nurses (1998-2018)",
-    subtitle = "By state"
-  )
+Create a version of the same line chart but using direct labels instead of legends. 
+
+You can achieve this with just `geom_text()` but you can also check out https://r-graph-gallery.com/web-line-chart-with-labels-at-end-of-line.html for a fancier way of achieving this.
+
+```{r}
+# YOUR CODE HERE
+
 ```
 
 # Task 3. Colorblind-friendly plots
@@ -129,18 +96,34 @@ Try out colorblind simulations at http://hclwizard.org/cvdemulator/ or |> your p
 With the line chart from Task 1, create 3 different plots: one with the default color scale, one with the `viridis` color scale, and one with the `OkabeIto` color scale from `colorblindr`. Show the `cvd_grid()` of each plot and describe the simulated effectiveness of the color scales for colorblind viewers.
 
 ```{r}
-# YOUR CODE HERE
+# YOUR CODE HERE for default color scale
 
 ```
 
-# Task 4. Direct labelling instead of legends
+What do you think of the default color scale effectiveness for colorblind viewers?
 
-Refer to this page: https://r-graph-gallery.com/web-line-chart-with-labels-at-end-of-line.html
+YOUR ANSWER HERE
 
-Create a version of the same line chart but using direct labels instead of legends. Show the `cvd_grid()` and describe how this can be helpful.
+---
 
 ```{r}
-# YOUR CODE HERE
+# YOUR CODE HERE for viridis color scale
 
 ```
+
+What do you think of the viridis color scale effectiveness for colorblind viewers?
+
+YOUR ANSWER HERE
+
+---
+
+```{r}
+# YOUR CODE HERE for OkabeIto color scale
+
+```
+
+What do you think of the OkabeIto color scale effectiveness for colorblind viewers? 
+
+YOUR ANSWER HERE
+
 
