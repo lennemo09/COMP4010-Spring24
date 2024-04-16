@@ -41,7 +41,7 @@ The corresponding example R Markdown notebook is also provided with different fo
 | 06 | Data wrangling! | [Notes](Week%206/Week6-AE-Notes.md) | [Rmd](Week%206/Week6-AE-RMarkdown.Rmd) |
 | 07 | Annotations | [Notes](Week%207/Week7-AE-Notes.md) | [Rmd](Week%207/Week7-AE-RMarkdown.Rmd) |
 | 08 | Presentation week! | n/a | n/a |
-| 09 | Accessibility |  | |
+| 09 | Accessibility | [Notes](Week%209/Week9-AE-Notes.md) | [Rmd](Week%209/Week9-AE-RMarkdown.Rmd) |
 | 10 | Coming soon... |  | |
 | 11 | ... |  | |
 | 12 | ... |  | |
