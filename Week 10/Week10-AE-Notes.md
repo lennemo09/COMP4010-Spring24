@@ -23,7 +23,7 @@ nyc_311
 Store your Stadia Maps API key using the function:
 
 ```R
-register_stadiamaps(key = "9ae33801-3948-44ed-af85-6b5081ae22bf", write = TRUE)
+register_stadiamaps(key = "YOUR KEY HERE", write = TRUE)
 ```
 
 ## Task 1. Obtain map tiles for New York City
@@ -102,7 +102,9 @@ To provide better context, overlay the NY county borders on the choropleth map u
 
 ![Jon Schwabish -What Not to do in Data Visualization: A Walk through the Bad DataViz Hall of Shame](img/shame.png)
 
-"[Jon Schwabish] is an economist who trains people to be better at data visualization." This week we don't have just one example for the Hall of Shame but a rather interesting video going through numerous bad examples of data visualization used in real life, along with the comments of Professor Jon Schwabish.
+"[Jon Schwabish](https://policyviz.com/about/) is an economist who trains people to be better at data visualization." This week we don't have just one example for the Hall of Shame but a rather interesting video going through numerous bad examples of data visualization used in real life, along with the comments of Professor Jon Schwabish.
+
+Check out the video here: [What Not to do in Data Visualization: A Walk through the Bad DataViz Hall of Shame](https://www.youtube.com/watch?v=KluzR75S6U0)
 
 > Talk abstract: Prepare to be amused and enlightened as we embark on a comical journey through the quirky world of bad data visualizations. In this light-hearted talk, I’ll showcase some of the most outrageous and baffling data visual blunders that have left audiences scratching their heads. From pie charts that vie you everything to bar charts that distort and mislead, you’ll see it all. I mix the comical with the serious to unveil visual missteps in the data world. Amidst the 3D exploding charts, you'll also glean valuable lessons on what not to do when crafting data visualizations. Join me for a rollicking exploration of data gone wrong and leave with a smile and a newfound appreciation for the importance of clarity and accuracy in our data-driven endeavors.
 
