@@ -1,0 +1,199 @@
+---
+title: "Week10-AE-RMarkdown"
+output: html_document
+date: "2024-04-25"
+---
+
+```{r}
+library(tidyverse)
+#install.packages('ggmap')
+library(ggmap)
+#install.packages('sf')
+library(sf)
+library(colorspace)
+library(scales)
+```
+
+Let’s first load a subset of 311 service requests in New York City. This subset includes 311 service requests related to Food Poisoning in commercial establishments (e.g. restaurants, cafeterias, food carts).
+
+```{r}
+nyc_311 <- read_csv(file = "nyc-311.csv", show_col_types = FALSE)
+nyc_311
+```
+
+# Store your Stadia Maps API key using the function
+
+```{r}
+register_stadiamaps(key = "9ae33801-3948-44ed-af85-6b5081ae22bf", write = TRUE)
+```
+
+# Task 1. Obtain map tiles for New York City
+
+Use [bboxfinder.com] to find bounding box coordinates for New York City. Then, use `get_stamenmap()` to obtain map tiles for New York City and visualize the map.
+
+> Try using a `zoom` level of 11.
+
+```{r}
+# store bounding box coordinates
+nyc_bb <- c(
+  left = -74.263045,
+  bottom = 40.487652,
+  right = -73.675963,
+  top = 40.934743
+)
+
+nyc <- get_stadiamap(
+  bbox = nyc_bb,
+  zoom = 11
+)
+
+# plot the raster map
+ggmap(nyc)
+```
+
+# Task 2. Food poisoning rates
+
+The COVID-19 pandemic caused massive disruption in the restaurant industry. Due to social distancing measures and lockdowns, restaurant traffic decreased significantly.
+
+While this had significant financial ramifications, one potentially overlooked consequence is the impact on food poisoning rates. With fewer people eating out, the number of food poisoning complaints may have decreased.
+
+Visualize the geospatial distribution of complaints related to food poisoning in NYC in March, April, and May over a four-year time period (2018-21). Construct the chart in such a way that you can make valid comparisons over time and geographically. What impact did COVID-19 have on food poisoning cases in NYC? Did it vary geographically?
+
+```{r}
+nyc_covid_food_poison <- nyc_311 |>
+  # generate a year variable
+  mutate(year = year(created_date)) |>
+  # only keep reports in March, April, and May from 2018-21
+  filter(month(created_date) %in% 3:5, year %in% 2018:2021)
+
+ggmap(nyc) +
+  # add the heatmap
+  stat_density_2d(
+    data = nyc_covid_food_poison,
+    mapping = aes(
+      x = longitude,
+      y = latitude,
+      fill = after_stat(level)
+    ),
+    alpha = .1,
+    bins = 50,
+    geom = "polygon"
+  ) +
+  scale_fill_viridis_c() +
+  facet_wrap(facets = vars(year))
+```
+
+# Task 3. Visualize food poisoning complains on Roosevelt Island
+
+Now focus on food poisoning complaints on or around Roosevelt Island.2 Use get_stamenmap() to obtain map tiles for the Roosevelt Island region and overlay with the food poisoning complaints. What type of chart is more effective for this task?
+
+> Consider adjusting your `zoom` for this geographic region.
+
+```{r}
+# Obtain map tiles for Roosevelt Island
+roosevelt_bb <- c(
+  left = -73.967121,
+  bottom = 40.748700,
+  right = -73.937080,
+  top = 40.774704
+)
+roosevelt <- get_stadiamap(
+  bbox = roosevelt_bb,
+  zoom = 14
+)
+
+# Generate a scatterplot of food poisoning complaints
+ggmap(roosevelt) +
+  # add a scatterplot layer
+  geom_point(
+    data = filter(nyc_311, complaint_type == "Food Poisoning"),
+    mapping = aes(
+      x = longitude,
+      y = latitude
+    ),
+    alpha = 0.2
+  )
+```
+
+# New York 2022 median household income
+
+We will use two data files for this analysis. The first contains median household incomes for each census tract in New York from 2022. The second contains the boundaries of each county in New York.
+
+```{r}
+# useful on MacOS to speed up rendering of geom_sf() objects
+if (!identical(getOption("bitmapType"), "cairo") && isTRUE(capabilities()[["cairo"]])) {
+  options(bitmapType = "cairo")
+}
+
+# create reusable labels for each plot
+map_labels <- labs(
+  title = "Median household income in New York in 2022",
+  subtitle = "By census tract",
+  color = NULL,
+  fill = NULL,
+  caption = "Source: American Community Survey"
+)
+
+# load data
+ny_inc <- read_rds(file = "ny-inc.rds")
+ny_counties <- read_rds(file = "ny-counties.rds")
+
+ny_inc
+```
+
+```{r}
+ny_counties
+```
+
+# Task 4. Draw a continuous choropleth of median household income
+
+Create a choropleth map of median household income in New York. Use a continuous color gradient to identify each tract’s median household income. Use a continuous color gradient to identify each tract’s median household income.
+
+> Use the stored `map_labels` to set the title, subtitle, and caption for this and the remaining plots.
+
+```{r}
+ggplot(data = ny_inc) +
+  # use fill and color to avoid gray boundary lines
+  geom_sf(aes(fill = medincomeE, color = medincomeE)) +
+  # increase interpretability of graph
+  scale_color_continuous(labels = label_dollar()) +
+  scale_fill_continuous(labels = label_dollar()) +
+  map_labels
+```
+
+**OPTIONAL**: Use `viridis` color palette.
+```{r}
+ggplot(data = ny_inc) +
+  # use fill and color to avoid gray boundary lines
+  geom_sf(mapping = aes(fill = medincomeE, color = medincomeE)) +
+  # increase interpretability of graph
+  scale_fill_continuous_sequential(
+    palette = "viridis",
+    rev = FALSE,
+    aesthetics = c("fill", "color"),
+    labels = label_dollar(),
+    name = NULL
+  ) +
+  map_labels
+```
+
+# Task 5. Overlay county borders
+
+To provide better context, overlay the NY county borders on the choropleth map.
+
+```{r}
+ggplot(data = ny_inc) +
+  # use fill and color to avoid gray boundary lines
+  geom_sf(mapping = aes(fill = medincomeE, color = medincomeE)) +
+  # add county borders
+  geom_sf(data = ny_counties, color = "white", fill = NA) +
+  # increase interpretability of graph
+  scale_fill_continuous_sequential(
+    palette = "viridis",
+    rev = FALSE,
+    aesthetics = c("fill", "color"),
+    labels = label_dollar(),
+    name = NULL
+  ) +
+  map_labels
+```
