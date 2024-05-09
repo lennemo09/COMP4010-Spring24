@@ -43,7 +43,7 @@ The corresponding example R Markdown notebook is also provided with different fo
 | 08 | Presentation week! | n/a | n/a |
 | 09 | Accessibility | [Notes](Week%209/Week9-AE-Notes.md) | [Rmd](Week%209/Week9-AE-RMarkdown.Rmd) |
 | 10 | Spatial (geo) data visualization | [Notes](Week%2010/Week10-AE-Notes.md) | [Rmd](Week%2010/Week10-AE-RMarkdown.Rmd) |
-| 11 | Coming soon... |  | |
+| 11 | Time series and Animation | [Notes](Week%2011/Week11-AE-Notes.md) | [Rmd](Week%2011/Week11-AE-RMarkdown.Rmd) |
 | 12 | ... |  | |
 | 13 | ... |  | |
 | 14 | ... |  | |
