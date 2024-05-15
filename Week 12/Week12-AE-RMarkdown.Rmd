@@ -1,0 +1,367 @@
+---
+title: "Iris & Penguins Dataset Dashboard"
+author: "Your Name"
+output: 
+  html_document:
+    runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(shiny)
+library(dplyr)
+library(ggplot2)
+library(plotly)
+library(palmerpenguins) #install.packages('palmerpenguins')
+library(bslib) #install.packages("bslib")
+library(bsicons)
+data(iris)
+penguins <- penguins_raw
+```
+
+# Starting a Shiny app
+
+```{r}
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Iris and Penguin Dataset Dashboard")
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+```
+
+# Adding tabs
+
+```{r}
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Iris and Penguin Dataset Dashboard"),
+  tabsetPanel(
+    tabPanel("Iris Dataset"),
+    tabPanel("Penguin Dataset")
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+```
+
+
+# Adding layout and controls for Iris
+
+```{r}
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Iris and Penguin Dataset Dashboard"),
+  tabsetPanel(
+    tabPanel("Iris Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("iris_xvar", "X-axis variable", choices = names(iris)[1:4]),
+          selectInput("iris_yvar", "Y-axis variable", choices = names(iris)[1:4], selected = names(iris)[[2]]),
+          selectInput("iris_species", "Species", choices = unique(iris$Species), multiple = TRUE, selected = unique(iris$Species))
+        ),
+        mainPanel(
+          plotlyOutput("iris_scatterPlot"),
+          tableOutput("iris_dataTable")
+        )
+      )
+    ),
+    tabPanel("Penguin Dataset")
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+```
+
+# Adding layout and controls for Penguins
+
+```{r}
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Iris and Penguin Dataset Dashboard"),
+  tabsetPanel(
+    tabPanel("Iris Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("iris_xvar", "X-axis variable", choices = names(iris)[1:4]),
+          selectInput("iris_yvar", "Y-axis variable", choices = names(iris)[1:4], selected = names(iris)[[2]]),
+          selectInput("iris_species", "Species", choices = unique(iris$Species), multiple = TRUE, selected = unique(iris$Species))
+        ),
+        mainPanel(
+          plotlyOutput("iris_scatterPlot"),
+          tableOutput("iris_dataTable")
+        )
+      )
+    ),
+    tabPanel("Penguin Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("penguin_xvar", "X-axis variable", choices = names(penguins)[3:6]),
+          selectInput("penguin_species", "Species", choices = unique(penguins$Species), multiple = TRUE, selected = unique(penguins$Species))
+        ),
+        mainPanel(
+          plotlyOutput("penguin_barPlot"),
+          tableOutput("penguin_dataTable")
+        )
+      )
+    )
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+```
+
+# Adding reactive filtering for Iris
+
+```{r}
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Iris and Penguin Dataset Dashboard"),
+  tabsetPanel(
+    tabPanel("Iris Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("iris_xvar", "X-axis variable", choices = names(iris)[1:4]),
+          selectInput("iris_yvar", "Y-axis variable", choices = names(iris)[1:4], selected = names(iris)[[2]]),
+          selectInput("iris_species", "Species", choices = unique(iris$Species), multiple = TRUE, selected = unique(iris$Species))
+        ),
+        mainPanel(
+          plotlyOutput("iris_scatterPlot"),
+          tableOutput("iris_dataTable")
+        )
+      )
+    ),
+    tabPanel("Penguin Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("penguin_xvar", "X-axis variable", choices = names(penguins)[3:6]),
+          selectInput("penguin_species", "Species", choices = unique(penguins$Species), multiple = TRUE, selected = unique(penguins$Species))
+        ),
+        mainPanel(
+          plotlyOutput("penguin_barPlot"),
+          tableOutput("penguin_dataTable")
+        )
+      )
+    )
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {
+  # Iris dataset
+  filteredIrisData <- reactive({
+    iris %>%
+      filter(Species %in% input$iris_species)
+  })
+  
+  output$iris_scatterPlot <- renderPlotly({
+    p <- ggplot(filteredIrisData(), aes_string(x = input$iris_xvar, y = input$iris_yvar, color = "Species", text = "Species")) +
+      geom_point() +
+      theme_minimal() +
+      labs(title = "Scatter Plot of Iris Dataset", x = input$iris_xvar, y = input$iris_yvar)
+    
+    ggplotly(p, tooltip = c("x", "y", "Species"))
+  })
+  
+  output$iris_dataTable <- renderTable({
+    filteredIrisData()
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+```
+
+# Adding reactive filtering for Penguins
+
+```{r}
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Iris and Penguin Dataset Dashboard"),
+  tabsetPanel(
+    tabPanel("Iris Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("iris_xvar", "X-axis variable", choices = names(iris)[1:4]),
+          selectInput("iris_yvar", "Y-axis variable", choices = names(iris)[1:4], selected = names(iris)[[2]]),
+          selectInput("iris_species", "Species", choices = unique(iris$Species), multiple = TRUE, selected = unique(iris$Species))
+        ),
+        mainPanel(
+          plotlyOutput("iris_scatterPlot"),
+          tableOutput("iris_dataTable")
+        )
+      )
+    ),
+    tabPanel("Penguin Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("penguin_xvar", "X-axis variable", choices = names(penguins)[3:6]),
+          selectInput("penguin_species", "Species", choices = unique(penguins$Species), multiple = TRUE, selected = unique(penguins$Species))
+        ),
+        mainPanel(
+          plotlyOutput("penguin_barPlot"),
+          tableOutput("penguin_dataTable")
+        )
+      )
+    )
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {
+  # Iris dataset
+  filteredIrisData <- reactive({
+    iris %>%
+      filter(Species %in% input$iris_species)
+  })
+  
+  output$iris_scatterPlot <- renderPlotly({
+    p <- ggplot(filteredIrisData(), aes_string(x = input$iris_xvar, y = input$iris_yvar, color = "Species", text = "Species")) +
+      geom_point() +
+      theme_minimal() +
+      labs(title = "Scatter Plot of Iris Dataset", x = input$iris_xvar, y = input$iris_yvar)
+    
+    ggplotly(p, tooltip = c("x", "y", "Species"))
+  })
+  
+  output$iris_dataTable <- renderTable({
+    filteredIrisData()
+  })
+  
+  # Penguin dataset
+  filteredPenguinData <- reactive({
+    penguins %>%
+      filter(Species %in% input$penguin_species)
+  })
+  
+  output$penguin_barPlot <- renderPlotly({
+    p <- ggplot(filteredPenguinData(), aes_string(x = input$penguin_xvar, fill = "Species", text = "Species")) +
+      geom_bar(position = "dodge") +
+      theme_minimal() +
+      labs(title = "Bar Plot of Penguin Dataset", x = input$penguin_xvar)
+    
+    ggplotly(p, tooltip = c("x", "y", "Species"))
+  })
+  
+  output$penguin_dataTable <- renderTable({
+    filteredPenguinData()
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+```
+
+# Final version using bslib and bsicon for decorations
+
+```{r}
+# Define UI for the Shiny app
+ui <- fluidPage(
+  theme = bs_theme(
+    version = 5,
+    bootswatch = "flatly", # You can choose different themes like "cosmo", "cerulean", etc.
+    primary = "#2c3e50",   # Customize colors as needed
+    secondary = "#18bc9c"
+  ),
+  titlePanel("Iris and Penguin Dataset Dashboard"),
+  tabsetPanel(
+    tabPanel("Iris Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("iris_xvar", "X-axis variable", choices = names(iris)[1:4]),
+          selectInput("iris_yvar", "Y-axis variable", choices = names(iris)[1:4], selected = names(iris)[[2]]),
+          selectInput("iris_species", "Species", choices = unique(iris$Species), multiple = TRUE, selected = unique(iris$Species)),
+          value_box(
+            title = "Iris Dataset",
+            value = "Data about some flowers",
+            showcase = bs_icon("database-fill-check"),
+            p("Flowers", bs_icon("flower3")),
+            p("and stuff", bs_icon("emoji-smile"))
+          )
+        ),
+        mainPanel(
+          plotlyOutput("iris_scatterPlot"),
+          tableOutput("iris_dataTable")
+          
+        )
+      )
+    ),
+    tabPanel("Penguin Dataset",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("penguin_xvar", "X-axis variable", choices = names(penguins)[3:6]),
+          selectInput("penguin_species", "Species", choices = unique(penguins$Species), multiple = TRUE, selected = unique(penguins$Species))
+        ),
+        mainPanel(
+          plotlyOutput("penguin_barPlot"),
+          tableOutput("penguin_dataTable")
+        )
+      )
+    )
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {
+  # Iris dataset
+  filteredIrisData <- reactive({
+    iris %>%
+      filter(Species %in% input$iris_species)
+  })
+  
+  output$iris_scatterPlot <- renderPlotly({
+    p <- ggplot(filteredIrisData(), aes_string(x = input$iris_xvar, y = input$iris_yvar, color = "Species", text = "Species")) +
+      geom_point() +
+      theme_minimal() +
+      labs(title = "Scatter Plot of Iris Dataset", x = input$iris_xvar, y = input$iris_yvar)
+    
+    ggplotly(p, tooltip = c("x", "y", "Species"))
+  })
+  
+  output$iris_dataTable <- renderTable({
+    filteredIrisData()
+  })
+  
+  # Penguin dataset
+  filteredPenguinData <- reactive({
+    penguins %>%
+      filter(Species %in% input$penguin_species)
+  })
+  
+  output$penguin_barPlot <- renderPlotly({
+    p <- ggplot(filteredPenguinData(), aes_string(x = input$penguin_xvar, fill = "Species", text = "Species")) +
+      geom_bar(position = "dodge") +
+      theme_minimal() +
+      labs(title = "Bar Plot of Penguin Dataset", x = input$penguin_xvar)
+    
+    ggplotly(p, tooltip = c("x", "y", "species"))
+  })
+  
+  output$penguin_dataTable <- renderTable({
+    filteredPenguinData()
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+
+```

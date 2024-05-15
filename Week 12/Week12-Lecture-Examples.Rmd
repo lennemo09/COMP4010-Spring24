@@ -1,0 +1,182 @@
+# Plotly
+
+```{r}
+library(gapminder)
+
+#install.packages('plotly')
+library(plotly)
+
+gapminder_2007 <- filter(
+  gapminder,
+  year == 2007
+)
+
+my_plot <- ggplot(
+  data = gapminder_2007,
+  mapping = aes(
+    x = gdpPercap, y = lifeExp,
+    color = continent
+  )
+) +
+  geom_point() +
+  scale_x_log10() +
+  theme_minimal()
+
+ggplotly(my_plot)
+```
+
+# Plotly tooltips
+```{r}
+my_plot <- ggplot(
+  data = gapminder_2007,
+  mapping = aes(
+    x = gdpPercap, y = lifeExp,
+    color = continent
+  )
+) +
+  geom_point(aes(text = country)) +
+  scale_x_log10() +
+  theme_minimal()
+
+ggplotly(
+  my_plot,
+  tooltip = "text"
+)
+```
+
+
+# Plotly with bars
+```{r}
+car_hist <- ggplot(
+  data = mpg,
+  mapping = aes(x = hwy)
+) +
+  geom_histogram(
+    binwidth = 2,
+    boundary = 0,
+    color = "white"
+  )
+
+ggplotly(car_hist)
+```
+
+# Creating interactive World Bank plot
+```{r}
+library(tidyverse)
+library(WDI)
+library(scales)
+library(plotly)
+library(colorspace)
+#install.packages('ggbeeswarm')
+library(ggbeeswarm)
+
+# get World Bank indicators
+indicators <- c(
+  population = "SP.POP.TOTL",
+  prop_women_parl = "SG.GEN.PARL.ZS",
+  gdp_per_cap = "NY.GDP.PCAP.KD"
+)
+
+wdi_parl_raw <- WDI(
+  country = "all", indicators, extra = TRUE,
+  start = 2022, end = 2022
+)
+
+# keep actual "economies" (this may take a while to run)
+wdi_clean <- wdi_parl_raw |>
+  filter(region != "Aggregates")
+glimpse(wdi_clean)
+```
+
+```{r}
+wdi_2022 <- wdi_clean |>
+  filter(year == 2022) |>
+  drop_na(prop_women_parl) |>
+  # Scale this down from 0-100 to 0-1 so that scales::label_percent() can format
+  # it as an actual percent
+  mutate(prop_women_parl = prop_women_parl / 100)
+
+static_plot <- ggplot(
+  data = wdi_2022,
+  mapping = aes(y = fct_rev(region), x = prop_women_parl, color = region)
+) +
+  geom_quasirandom() +
+  scale_x_continuous(labels = label_percent()) +
+  scale_color_discrete_qualitative(guide = "none") +
+  labs(x = "% women in parliament", y = NULL, caption = "Source: The World Bank") +
+  theme_bw(base_size = 14)
+static_plot
+```
+Make it interactive
+
+```{r}
+ggplotly(static_plot)
+```
+
+Modifying the tooltip
+
+```{r}
+static_plot_tooltip <- ggplot(
+  data = wdi_2022,
+  mapping = aes(y = fct_rev(region), x = prop_women_parl, color = region)
+) +
+  geom_quasirandom(
+    mapping = aes(text = country)
+  ) +
+  scale_x_continuous(labels = label_percent()) +
+  scale_color_discrete_qualitative() +
+  labs(x = "% women in parliament", y = NULL, caption = "Source: The World Bank") +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "none")
+
+ggplotly(static_plot_tooltip,
+  tooltip = "text"
+)
+```
+
+
+Creating custom tooltips with the format
+
+```
+Name of country
+X% women in parliament
+```
+
+Generate a new column using `mutate()` with the required character string
+
+- `str_glue()` to combine character strings with data values
+- The `<br>` is HTML code for a line break
+- Use the `label_percent()` function to format numbers as percents
+
+```{r}
+wdi_2022 <- wdi_clean |>
+  filter(year == 2022) |>
+  drop_na(prop_women_parl) |>
+  mutate(
+    prop_women_parl = prop_women_parl / 100,
+    fancy_label = str_glue("{country}<br>{label_percent(accuracy = 0.1)(prop_women_parl)} women in parliament")
+  )
+wdi_2022 |>
+  select(country, prop_women_parl, fancy_label) |>
+  head()
+```
+
+
+```{r}
+static_plot_tooltip_fancy <- ggplot(
+  data = wdi_2022,
+  mapping = aes(y = fct_rev(region), x = prop_women_parl, color = region)
+) +
+  geom_quasirandom(
+    mapping = aes(text = fancy_label)
+  ) +
+  scale_x_continuous(labels = label_percent()) +
+  scale_color_discrete_qualitative() +
+  labs(x = "% women in parliament", y = NULL, caption = "Source: The World Bank") +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "none")
+
+ggplotly(static_plot_tooltip_fancy,
+  tooltip = "text"
+)
+```
