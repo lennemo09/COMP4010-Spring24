@@ -44,7 +44,7 @@ The corresponding example R Markdown notebook is also provided with different fo
 | 09 | Accessibility | [Notes](Week%209/Week9-AE-Notes.md) | [Rmd](Week%209/Week9-AE-RMarkdown.Rmd) |
 | 10 | Spatial (geo) data visualization | [Notes](Week%2010/Week10-AE-Notes.md) | [Rmd](Week%2010/Week10-AE-RMarkdown.Rmd) |
 | 11 | Time series and Animation | [Notes](Week%2011/Week11-AE-Notes.md) | [Rmd](Week%2011/Week11-AE-RMarkdown.Rmd) |
-| 12 | Interactive visualization with RShiny | No notes, follow the lecture! | [Lecture Rmd](Week%2012/Week12-Lecutre-Examples.Rmd) \ [AE Rmd](Week%2012/Week12-AE-RMarkdown.Rmd) |
+| 12 | Interactive visualization with RShiny | No notes, follow the lecture! | [Lecture Rmd](Week%2012/Week12-Lecture-Examples.Rmd) \ [AE Rmd](Week%2012/Week12-AE-RMarkdown.Rmd) |
 | 13 | ... |  | |
 | 14 | ... |  | |
 | 15 | ... |  | |
