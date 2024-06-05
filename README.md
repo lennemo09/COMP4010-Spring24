@@ -24,7 +24,7 @@ To get started, you will need to install R and RStudio:
 | --- | --- | --- | --- |
 | Week 1-2 | [Problem Set](Homework%201/Homework1.md) | [Dataset](Homework%201/ikea_data.csv) | 11.59pm Monday Week 4 (March 11) |
 | Week 4-5 | [Problem Set](Homework%202/Homework2.md) | [Dataset](Homework%202/) | 11.59pm Monday Week 7 (April 1) |
-| Week 6-7-9 | Coming soon... | | |
+| The rest! | [Problem Set](Homework%203/Homework3.md) | [Dataset](Homework%203/data/) | 11.59pm Monday Week 15 (June 24) |
 
 ## Weekly Application Exercises (AE)
 
