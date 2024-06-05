@@ -2,14 +2,17 @@
 
 # COMP4010/5120 Data Visualization - Homework 3 Question Set
 
-This assignment requires you to demonstrate your knowledge of visualizing geospatial data (choropleth map), creating and publishing an interactive Shiny dashboard, and intepreting ML model via simple visualization.
+This assignment requires you to demonstrate your knowledge of visualizing geospatial data (choropleth map), creating and publishing an interactive Shiny dashboard. Additionally, you will also be introduced to `DALEX`, a library for ML model intepretation. This was supposed to be covered during an AE sessio, however due to scheduling, a brief introductory exercise will be included here instead.
 
 The assignment is seperated into 3 main sections, each using a different dataset.
+
+The maximum points for this assignment is **20 points**.
 
 # Submission requirements
 
 Similar to the weekly AEs and prior homeworks, you should submit your work in 2 formats: `Rmd` and `pdf` to Canvas.
-Answers for non-coding questions should be added in the file as plain text in the provided ANSWER field.
+The entire assignment should be contained in 1 `Rmd` file,
+Answers for non-coding questions should be added in the file as plain text in the provided `ANSWER` field.
 
 # Section 1: Studying popularity of baby names
 
@@ -42,7 +45,7 @@ It also includes the following data set from the US Census:
 - `births`: Number of live births by year, up to 2017.
 You may need to use multiple files, but the most important one is `babynames`. Feel free to bring in additional data sources as you wish.
 
-## Task 1: Shiny Dashboard for Baby Naming Trends
+## Task 1: Shiny Dashboard for Baby Naming Trends (10 pts)
 
 ### Summary of task requirements
 
@@ -131,7 +134,7 @@ state_abbreviations <- data.frame(
 )
 ```
 
-## Task 2: Exploring dog adoption dataset in the US
+## Task 2: Exploring dog adoption dataset in the US (8 pts)
 
 ### Summary of task requirements
 
@@ -160,7 +163,7 @@ state_abbreviations <- data.frame(
 - Use the `state_abbreviations` dataframe which you can find in the data folder of your repo as a lookup table to match state names to abbreviations.
 - Use a gradient color scale and `log10` transformation.
 
-# Section 3. Interpreting and explaining ML model prediction 
+# Section 3. DALEX basics with explainer
 
 To start, make sure you have the following packages installed.
 
@@ -220,7 +223,7 @@ explainer_glmnet <- explain_tidymodels(
 )
 ```
 
-## Task 3: Create explainer objects
+## Task 3: Create explainer objects (1 pt)
 
 ### Summary of task requirements
 
@@ -249,7 +252,7 @@ explainer_kknn <- explain_tidymodels(
 )
 ```
 
-## Task 4: Permutation-based feature importance
+## Task 4: Feature importance (1 pt)
 
 ### Summary of task requirements
 
