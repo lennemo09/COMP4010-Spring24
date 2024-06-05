@@ -11,7 +11,8 @@ The maximum points for this assignment is **20 points**.
 # Submission requirements
 
 Similar to the weekly AEs and prior homeworks, you should submit your work in 2 formats: `Rmd` and `pdf` to Canvas.
-The entire assignment should be contained in 1 `Rmd` file,
+The entire assignment should be contained in 1 `Rmd` file.
+
 Answers for non-coding questions should be added in the file as plain text in the provided `ANSWER` field.
 
 # Section 1: Studying popularity of baby names
